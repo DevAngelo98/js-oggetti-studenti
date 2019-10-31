@@ -24,8 +24,6 @@ for(var i=0; i<arrayStudenti.length; i++){
   arrayStudenti[i].presentati();
 }
 
-
-
 //Creazione professore, saluto in modo formale o non
 
 var prof = function (nome, cognome) {
@@ -42,12 +40,23 @@ function saluto (persona1, persona2){
   if(persona1 instanceof studente && persona2 instanceof studente){
     console.log(persona1.nome + ":" + " Ciao " + persona2.nome + " come stai?");
   } else if (persona1 instanceof studente && persona2 instanceof prof){
-    console.log("Salve prof " + persona2.nome + ", Sono lo studente: " + persona1.nome + " " + persona1.cognome);
+    console.log("Salve prof " + persona2.nome + ", sono lo studente: " + persona1.nome + " " + persona1.cognome);
   } else if (persona2 instanceof studente && persona1 instanceof prof){
-    console.log("Salve prof " + persona1.nome + ", Sono lo studente: " + persona2.nome + " " + persona2.cognome);
+    console.log("Salve prof " + persona1.nome + ", sono lo studente: " + persona2.nome + " " + persona2.cognome);
   }
 
 }
+
+console.log("");
+console.log("              Interazione tra oggetti");
+console.log("                      .              ");
+console.log("                      .              ");
+console.log("                      .              ");
+console.log("                      .              ");
+console.log("                      .              ");
+console.log("                      v              ");
+console.log("");
+
 
 saluto(prof1, studente1);
 saluto(studente1, prof2);
