@@ -5,7 +5,7 @@ var studente = function(nome,cognome,eta) {
   this.eta = eta;
 };
 
-//Ritorna il nome e cognome
+//Ritorna il nome e cognome e l'età (se presente)
 studente.prototype.presentati = function(){
   if(this.eta != undefined){
     console.log("Ciao, mi chiamo " + this.nome + " il mio cogome è: " + this.cognome + ", ho: " + this.eta + "anni");
@@ -40,9 +40,11 @@ function saluto (persona1, persona2){
   if(persona1 instanceof studente && persona2 instanceof studente){
     console.log(persona1.nome + ":" + " Ciao " + persona2.nome + " come stai?");
   } else if (persona1 instanceof studente && persona2 instanceof prof){
-    console.log("Salve prof " + persona2.nome + ", sono lo studente: " + persona1.nome + " " + persona1.cognome);
+    console.log("Salve prof " + persona2.cognome + ", sono lo studente: " + persona1.nome + " " + persona1.cognome);
   } else if (persona2 instanceof studente && persona1 instanceof prof){
-    console.log("Salve prof " + persona1.nome + ", sono lo studente: " + persona2.nome + " " + persona2.cognome);
+    console.log("Salve prof " + persona1.cognome + ", sono lo studente: " + persona2.nome + " " + persona2.cognome);
+  } else{
+    console.log("Prof: " + persona1.nome + ", ciao  " + persona2.nome + " è andata bene la lezione oggi?");
   }
 
 }
@@ -61,3 +63,5 @@ console.log("");
 saluto(prof1, studente1);
 saluto(studente1, prof2);
 saluto(studente2, studente3);
+saluto(prof2, prof1);
+saluto(prof1, prof2);
